@@ -1,6 +1,9 @@
 #include "main.h"
-
-
+/**
+ * _abs - making any number absolute
+ * Return: return 0
+ * @i: global parameter
+ */
 
 int _abs(int i)
 
