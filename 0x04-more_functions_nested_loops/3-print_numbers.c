@@ -1,7 +1,6 @@
 #include "main.h"
 
-/*
- * @i: variable
+/**
  * print_numbers - print 1 to 9
  */
 
