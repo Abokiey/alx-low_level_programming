@@ -1,0 +1,1 @@
+pointers, arrays, srings readme
