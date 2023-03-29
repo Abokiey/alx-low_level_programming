@@ -1,6 +1,5 @@
 #include "main.h"
 
-
 /**
  * _strcat - concartinate to dest
  * @dest: pointer
