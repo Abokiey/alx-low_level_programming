@@ -1,8 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <ctype.h>
-#include <string.h>
-
 
 /**
  * main - entry point
@@ -13,10 +10,12 @@
 
 int main(int argc, char *argv[])
 
-	int result = 0, num, i, j, k;
+	int result, num, i, j, k;
 
-	if (argc ==1)
+	if (argc == 1)
+	{
 		printf("0\n")
+	}
 
 	for (i = 1; i < argc; i++)
 	{
