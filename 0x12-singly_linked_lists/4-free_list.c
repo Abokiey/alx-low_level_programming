@@ -6,6 +6,7 @@
  */
 
 void free_list(list_t *head)
+
 {
 	while (head != NULL)
 	{
@@ -14,3 +15,4 @@ void free_list(list_t *head)
 		head = head->next;
 	}
 }
+
