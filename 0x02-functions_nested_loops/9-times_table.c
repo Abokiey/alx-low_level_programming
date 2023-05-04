@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * times_table - times table from 0 to 9
+ * times_table - times table from 1 to 9
  * @i - vaariable
  * @k - variable
  * @j - variable

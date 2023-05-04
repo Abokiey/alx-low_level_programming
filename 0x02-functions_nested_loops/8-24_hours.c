@@ -1,8 +1,8 @@
 #include "main.h"
 /**
  * jack_bauer - print hours and minutes for a whole day
- * @h - hours
- * @m - minutes
+ * @h: hours
+ * @m: minutes
  */
 
 
