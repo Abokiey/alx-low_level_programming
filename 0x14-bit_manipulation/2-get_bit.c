@@ -2,7 +2,7 @@
 
 /**
  * get_bit - get the value of a bit at index
- * @n: the bit number
+ * @n: the bit number.
  * @index: index where the binary number is
  * Return: value of the bits or 0 if the is an error
  */
