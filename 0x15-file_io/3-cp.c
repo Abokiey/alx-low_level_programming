@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
- * __exit - prints error messages and exits with exit value
- * @error: num is either exit value or file descriptor
- * @s: str is a name, either of the two filenames
+ * exit_code - prints error messages with their values
+ * @error: if error it gives the exit value.
+ * @s: string names.
  * @fd: file descriptor
- * Return: 0 on success
+ * Return: 0 if successful
  **/
 int exit_code(int error, char *s, int fd)
 {
