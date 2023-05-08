@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 
 
 /**
@@ -16,21 +15,21 @@ int main(int argc, char *argv[])
 
 	if (argc != 3)
 	{
-	fprintf(stderr, "Usage: cp file_from file_to\n");
+	dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 	exit(97);
 	}
 
 	cp_from = open(argv[1], O_RDONLY);
 	if (cp_from == -1)
 	{
-		fprintf(stderr, "Error: Can't read from file %s\n", argv[1]);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
 
 	cp_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (cp_to == -1)
 	{
-	fprintf(stderr, "Error: Can't write to %s\n", argv[2]);
+	dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 	exit(99);
 	}
 
@@ -39,26 +38,26 @@ int main(int argc, char *argv[])
 		wr = write(cp_to, buffer, rd);
 		if (wr == -1)
 		{
-			fprintf(stderr, "Error: Can't write to %s\n", argv[2]);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 			exit(99);
 		}
 	}
 
 	if (rd == -1)
 	{
-		fprintf(stderr, "Error: Can't read from file %s\n", argv[1]);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
 
 	if (close(cp_from) == -1)
 	{
-		fprintf(stderr, "Error: Can't close from file %s\n", argv[1]);
+		dprintf(STDERR_FILENO, "Error: Can't close from file %s\n", argv[1]);
 		exit(100);
 	}
 
 	if (close(cp_to) == -1)
 	{
-		fprintf(stderr, "Error: Can't close to file %s\n", argv[2]);
+		dprintf(STDERR_FILENO, "Error: Can't close to file %s\n", argv[2]);
 		exit(100);
 	}
 
