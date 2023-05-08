@@ -1,5 +1,32 @@
 #include "main.h"
 
+/**
+ * __exit - prints error messages and exits with exit value
+ * @error: num is either exit value or file descriptor
+ * @s: str is a name, either of the two filenames
+ * @fd: file descriptor
+ * Return: 0 on success
+ **/
+int exit_code(int error, char *s, int fd)
+{
+	switch (error)
+	{
+	case 97:
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
+		exit(error);
+	case 98:
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", s);
+		exit(error);
+	case 99:
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", s);
+		exit(error);
+	case 100:
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
+		exit(error);
+	default:
+		return (0);
+	}
+}
 
 /**
  * main - copies file a to b
@@ -15,22 +42,20 @@ int main(int argc, char *argv[])
 
 	if (argc != 3)
 	{
-	dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
-	exit(97);
+		exit_code(97, NULL, 0);
 	}
 
 	cp_from = open(argv[1], O_RDONLY);
 	if (cp_from == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-		exit(98);
+		exit_code(98, argv[1], 0);
 	}
+
 
 	cp_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (cp_to == -1)
 	{
-	dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-	exit(99);
+		exit_code(99, argv[2], 0);
 	}
 
 	while ((rd = read(cp_from, buffer, sizeof(buffer))) > 0)
@@ -38,27 +63,23 @@ int main(int argc, char *argv[])
 		wr = write(cp_to, buffer, rd);
 		if (wr == -1)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-			exit(99);
+			exit_code(99, argv[2], 0);
 		}
 	}
 
 	if (rd == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-		exit(98);
+		exit_code(98, argv[1], 0);
 	}
 
 	if (close(cp_from) == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close from file %s\n", argv[1]);
-		exit(100);
+		exit_code(100, argv[2], 0);
 	}
 
 	if (close(cp_to) == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close to file %s\n", argv[2]);
-		exit(100);
+		exit_code(100, argv[1], 0);
 	}
 
 	return (0);
