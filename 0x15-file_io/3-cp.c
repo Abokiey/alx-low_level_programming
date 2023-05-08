@@ -7,7 +7,7 @@
  * @fd: file descriptor
  * Return: 0 if successful
  **/
-int exit_code(int error, char *s, int fd)
+int exit_code(int error, char *str, int fd)
 {
 	switch (error)
 	{
