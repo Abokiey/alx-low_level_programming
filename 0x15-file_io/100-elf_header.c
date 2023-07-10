@@ -1,10 +1,11 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <unistd.h>
 #include <elf.h>
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
-#include <unistd.h>
-#include <stdio.h>
-#include <stdlib.h>
 
 void check_elf(unsigned char *e_ident);
 void p_magic(unsigned char *e_ident);
@@ -18,7 +19,7 @@ void p_entry(unsigned long int e_entry, unsigned char *e_ident);
 void close_elf(int elf);
 
 /**
- *check_elf - Verifies if a file is an ELF file.
+ *check_elf - func Verifies if a file is an ELF file.
  *@e_ident: A pointer to an array containing the ELF magic numbers.
  */
 
