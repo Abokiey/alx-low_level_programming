@@ -1,8 +1,8 @@
 #include "main.h"
 
 /**
- * exit_code - prints out error messages with their values
- * @error: if its an error it gives the exit value.
+ * exit_code - prints error messages with their values
+ * @error: if error it gives the exit value.
  * @s: string names.
  * @fd: file descriptor
  * Return: 0 if successful
@@ -29,9 +29,9 @@ int exit_code(int error, char *s, int fd)
 }
 
 /**
- * main - copy file a to b
- * @argc: argument count
- * @argv: argument vector.
+ * main - copies file a to b
+ * @argc: argument count- should be 3 fils:./a.out copyfromfile copytofile.
+ * @argv: copy from one file to another.
  * Return: 0 (success), 97-100(exit errors).
  */
 
@@ -49,6 +49,7 @@ int main(int argc, char *argv[])
 	if (cp_from == -1)
 	{
 		exit_code(98, argv[1], 0);
+	}
 	cp_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (cp_to == -1)
 	{
@@ -70,9 +71,11 @@ int main(int argc, char *argv[])
 	{
 		exit_code(100, argv[2], 0);
 	}
+
 	if (close(cp_to) == -1)
 	{
 		exit_code(100, argv[1], 0);
 	}
+
 	return (0);
 }
