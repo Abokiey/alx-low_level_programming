@@ -44,7 +44,6 @@ int main(int argc, char *argv[])
 	{
 		exit_code(97, NULL, 0);
 	}
-
 	cp_from = open(argv[1], O_RDONLY);
 	if (cp_from == -1)
 	{
