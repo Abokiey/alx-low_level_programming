@@ -49,15 +49,11 @@ int main(int argc, char *argv[])
 	if (cp_from == -1)
 	{
 		exit_code(98, argv[1], 0);
-	}
-
-
 	cp_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (cp_to == -1)
 	{
 		exit_code(99, argv[2], 0);
 	}
-
 	while ((rd = read(cp_from, buffer, sizeof(buffer))) > 0)
 	{
 		wr = write(cp_to, buffer, rd);
@@ -66,21 +62,17 @@ int main(int argc, char *argv[])
 			exit_code(99, argv[2], 0);
 		}
 	}
-
 	if (rd == -1)
 	{
 		exit_code(98, argv[1], 0);
 	}
-
 	if (close(cp_from) == -1)
 	{
 		exit_code(100, argv[2], 0);
 	}
-
 	if (close(cp_to) == -1)
 	{
 		exit_code(100, argv[1], 0);
 	}
-
 	return (0);
 }
