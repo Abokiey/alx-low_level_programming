@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * exit_code - prints error messages with their values
+ * exit_code - prints an error messages with their values
  * @error: if error it gives the exit value.
  * @s: string names.
  * @fd: file descriptor
@@ -29,9 +29,9 @@ int exit_code(int error, char *s, int fd)
 }
 
 /**
- * main - copies file a to b
- * @argc: argument count- should be 3 fils:./a.out copyfromfile copytofile.
- * @argv: copy from one file to another.
+ * main - copy file a to b
+ * @argc: argument count
+ * @argv: argument vector.
  * Return: 0 (success), 97-100(exit errors).
  */
 
