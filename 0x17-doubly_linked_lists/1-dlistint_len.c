@@ -4,7 +4,7 @@
 
 /**
  * dlistint_len - counts the number of elements
- * @h - header to the linked list
+ * @h: header to the linked list
  *
  * Return: the length of the linked list
  */
