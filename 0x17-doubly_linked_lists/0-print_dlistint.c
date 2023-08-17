@@ -4,7 +4,7 @@
 
 /**
  * print_dlistint - prints all the ellements of a doubly linked list
- * h - pointer to the header of the list
+ * @h: pointer to the header of the list
  *
  * Return: the number of nodes
  */
