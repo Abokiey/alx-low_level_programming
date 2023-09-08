@@ -5,7 +5,7 @@
  * @ht: pointer to the hash table
  * @key: index where an element will be added
  * @value: value to be added
- *
+ * Return: 1 if successful 0 if not
  */
 
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
