@@ -1,0 +1,11 @@
+# making an executable
+
+target = school
+
+# compiler
+cc = gcc
+
+src: main.c school.c
+
+all: $(src)
+	$(cc) $(src) -o $(target)
