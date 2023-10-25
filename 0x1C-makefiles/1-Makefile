@@ -3,7 +3,7 @@
 target = school
 
 # compiler
-cc = gcc
+cc=gcc
 
 SRC=main.c school.c
 
