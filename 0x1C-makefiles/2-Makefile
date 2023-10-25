@@ -1,9 +1,9 @@
 # first useful mskefile
 
-name=school
-CC= gcc
-SRC= main.c school.c
-OBJ= $(SRC:.%c=%.o)
+CC=gcc
+SRC=main.c school.c
+OBJ=$(SRC:%.c=%.o)
+NAME=school
 
 all: $(OBJ)
-	$(CC) $(OBJ) -O $(name)
+	$(CC) $(OBJ) -o $(NAME)
