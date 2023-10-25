@@ -1,11 +1,8 @@
 # making an executable
 
-target = school
-
-# compiler
-cc=gcc
-
+TARGET=school
+CC=gcc
 SRC=main.c school.c
 
 all: $(SRC)
-	$(cc) $(SRC) -o $(target)
+	$(CC) $(SRC) -o $(TARGET)
