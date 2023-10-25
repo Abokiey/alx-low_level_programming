@@ -19,5 +19,5 @@ fclean:
 
 
 
-re: $(CC) $(SRC) -o $(NAME)
+re: fclean all
 
