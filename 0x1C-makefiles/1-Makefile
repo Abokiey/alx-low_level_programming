@@ -5,7 +5,7 @@ target = school
 # compiler
 cc = gcc
 
-src: main.c school.c
+SRC=main.c school.c
 
-all: $(src)
-	$(cc) $(src) -o $(target)
+all: $(SRC)
+	$(cc) $(SRC) -o $(target)
