@@ -17,14 +17,13 @@ int binary_search(int *array, size_t size, int value)
 	if (array == NULL)
 		return (-1);
 
-	for (left = 0, right = size - 1;right >= left;)
+	for (left = 0, right = size - 1; right >= left;)
 	{
 		printf("Searching in array: ");
 		for (index = left; index < right; index++)
 			printf("%d, ", array[index]);
 		printf("%d\n", array[index]);
 
-		
 		index = left + (right - left) / 2;
 		if (array[index] == value)
 			return (index);
