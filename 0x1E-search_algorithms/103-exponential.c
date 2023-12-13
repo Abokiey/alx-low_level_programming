@@ -4,6 +4,7 @@
 
 /**
  * _binary_search - search for a value in an array(sorted)
+ * @array: the array to check
  * @left: left side of array
  * @right: right side of array
  * @value: value to be searched
@@ -37,7 +38,7 @@ int _binary_search(int *array, size_t left, size_t right, int value)
 /**
  * exponential_search - searches for a value in a
  * sorted array of integers
- *
+ * @array: the array to check
  * @size: suze of the array
  * @value: the value to look for
  * Return: the value is found or not
